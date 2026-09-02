@@ -63,14 +63,14 @@ ingress:
   annotations: 
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: argocd-test-dev-artemis.${var.dns_name}
+    - host: argocd-test-dev-artemis.awsrun.com
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls:
     - secretName: argocd-test-dev-artemis-tls
       hosts:
-        - argocd-test-dev-artemis.${var.dns_name}
+        - argocd-test-dev-artemis.awsrun.com
 
 # -- Expose the service via gateway-api HTTPRoute
 # Requires Gateway API resources and suitable controller installed within the cluster
